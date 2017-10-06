@@ -14,6 +14,8 @@ You can use the following shortcuts to adjust the font size:
 - Decrease font size: `Ctrl/Cmd` and `-`
 - Reset font size to default: `Ctrl/Cmd` and `0`
 
+If you are using a different keyboard layout than US QWERTY, you may have to adjust these shortcuts.
+
 ### Settings
 
 You can configure the following settings:
