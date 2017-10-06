@@ -2,7 +2,7 @@
   "name": "fontsize-shortcuts",
   "displayName": "FontSize Shortcuts",
   "description": "Change the font size with keyboard shortcuts",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "publisher": "peterjuras",
   "bugs": {
     "url": "https://github.com/peterjuras/vsc-fontsize-shortcuts/issues"
@@ -26,36 +26,72 @@
   "activationEvents": [
     "onCommand:fontshortcuts.increaseFontSize",
     "onCommand:fontshortcuts.decreaseFontSize",
-    "onCommand:fontshortcuts.resetFontSize"
+    "onCommand:fontshortcuts.resetFontSize",
+    "onCommand:fontshortcuts.increaseEditorFontSize",
+    "onCommand:fontshortcuts.decreaseEditorFontSize",
+    "onCommand:fontshortcuts.resetEditorFontSize",
+    "onCommand:fontshortcuts.increaseTerminalFontSize",
+    "onCommand:fontshortcuts.decreaseTerminalFontSize",
+    "onCommand:fontshortcuts.resetTerminalFontSize"
   ],
   "main": "./out/src/extension",
   "license": "MIT",
   "contributes": {
     "commands": [
       {
+        "command": "fontshortcuts.increaseEditorFontSize",
+        "title": "Increase editor font size"
+      },
+      {
+        "command": "fontshortcuts.decreaseEditorFontSize",
+        "title": "Decrease editor font size"
+      },
+      {
+        "command": "fontshortcuts.resetEditorFontSize",
+        "title": "Reset editor font size"
+      },
+      {
+        "command": "fontshortcuts.increaseTerminalFontSize",
+        "title": "Increase terminal font size"
+      },
+      {
+        "command": "fontshortcuts.decreaseTerminalFontSize",
+        "title": "Decrease terminal font size"
+      },
+      {
+        "command": "fontshortcuts.resetTerminalFontSize",
+        "title": "Reset terminal font size"
+      },
+      {
         "command": "fontshortcuts.increaseFontSize",
-        "title": "Increase font size"
+        "title": "Increase global font size"
       },
       {
         "command": "fontshortcuts.decreaseFontSize",
-        "title": "Decrease font size"
+        "title": "Decrease global font size"
       },
       {
         "command": "fontshortcuts.resetFontSize",
-        "title": "Reset font size"
+        "title": "Reset global font size"
       }
     ],
     "configuration": {
       "title": "FontSize Shortcuts Configuration",
       "properties": {
         "fontshortcuts.defaultFontSize": {
-          "type": ["integer", "null"],
+          "type": ["number", "null"],
           "description":
-            "The default font size that is used on a font size reset",
+            "The default editor font size that is used on a font size reset",
+          "default": null
+        },
+        "fontshortcuts.defaultTerminalFontSize": {
+          "type": ["number", "null"],
+          "description":
+            "The default terminal font size that is used on a font size reset",
           "default": null
         },
         "fontshortcuts.step": {
-          "type": "integer",
+          "type": "number",
           "description":
             "The increment or decrement step for a font size change",
           "default": 1
@@ -64,22 +100,40 @@
     },
     "keybindings": [
       {
-        "command": "fontshortcuts.increaseFontSize",
+        "command": "fontshortcuts.increaseEditorFontSize",
         "key": "ctrl+=",
         "mac": "cmd+=",
         "when": "editorFocus"
       },
       {
-        "command": "fontshortcuts.decreaseFontSize",
+        "command": "fontshortcuts.decreaseEditorFontSize",
         "key": "ctrl+-",
         "mac": "cmd+-",
         "when": "editorFocus"
       },
       {
-        "command": "fontshortcuts.resetFontSize",
+        "command": "fontshortcuts.resetEditorFontSize",
         "key": "ctrl+0",
         "mac": "cmd+0",
         "when": "editorFocus"
+      },
+      {
+        "command": "fontshortcuts.increaseTerminalFontSize",
+        "key": "ctrl+=",
+        "mac": "cmd+=",
+        "when": "terminalFocus"
+      },
+      {
+        "command": "fontshortcuts.decreaseTerminalFontSize",
+        "key": "ctrl+-",
+        "mac": "cmd+-",
+        "when": "terminalFocus"
+      },
+      {
+        "command": "fontshortcuts.resetTerminalFontSize",
+        "key": "ctrl+0",
+        "mac": "cmd+0",
+        "when": "terminalFocus"
       }
     ]
   },
@@ -89,10 +143,10 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-    "typescript": "^2.0.3",
-    "vscode": "^1.0.0",
-    "mocha": "^2.3.3",
+    "@types/mocha": "^2.2.32",
     "@types/node": "^6.0.40",
-    "@types/mocha": "^2.2.32"
+    "mocha": "^2.3.3",
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0"
   }
 }

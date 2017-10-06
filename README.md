@@ -20,12 +20,14 @@ If you are using a different keyboard layout than US QWERTY, you may have to adj
 
 You can configure the following settings:
 
-- **fontshortcuts.defaultFontSize**: The default font size used for a reset. (default: 15)
+- **fontshortcuts.defaultFontSize**: The default editor font size used for a reset. (default: 15)
+- **fontshortcuts.defaultTerminalFontSize**: The default terminal font size used for a reset. (default: 15)
 - **fontshortcuts.step**: The step for each font size increment/decrement. (default: 1)
 
 ```json
 {
   "fontshortcuts.defaultFontSize": 15,
+  "fontshortcuts.defaultTerminalFontSize": 15,
   "fontshortcuts.step": 1
 }
 ```
@@ -35,6 +37,14 @@ You can configure the following settings:
 Visual Studio Code 1.6 or higher
 
 ## Release Notes
+
+#### 1.4.0
+
+- Added `fontshortcuts.defaultTerminalFontSize` setting to configure the terminal font size on a reset.
+
+- Added key bindings for changing editor and terminal font size separately.
+
+- Default key bindings now only apply to the editor or terminal depending on which one is active.
 
 #### 1.3.0
 
