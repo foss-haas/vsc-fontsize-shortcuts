@@ -8,7 +8,7 @@ I'm currently founding a startup and sadly no longer have time to work on this p
 
 Change the font size with keyboard shortcuts.
 
-![Example](http://i.imgur.com/Gs7KqPG.gif)
+![Example](https://i.imgur.com/Gs7KqPG.gif)
 
 ## Features
 
