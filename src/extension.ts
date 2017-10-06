@@ -5,7 +5,7 @@ import { ExtensionContext, commands, window, workspace } from "vscode";
 // Values from common editor config:
 // https://github.com/Microsoft/vscode/blob/master/src/vs/editor/common/config/commonEditorConfig.ts#L521
 const minFontSize = 1;
-const maxFontSize = 100;
+const maxFontSize = Number.MAX_SAFE_INTEGER;
 
 export function activate(context: ExtensionContext) {
   const increaseSizeCommand = commands.registerCommand(
