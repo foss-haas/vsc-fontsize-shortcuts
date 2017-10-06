@@ -1,9 +1,5 @@
 # FontSize Shortcuts
 
-# MAINTAINER WANTED!
-
-I'm currently founding a startup and sadly no longer have time to work on this project. If you are interested in mainting and taking over this project, feel free to create a new issue to coordinate the handover of this repository and the publishing of the VSCode extension.
-
 ## Introduction
 
 Change the font size with keyboard shortcuts.
