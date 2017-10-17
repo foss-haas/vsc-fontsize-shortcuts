@@ -6,7 +6,6 @@ Change the font size with keyboard shortcuts.
 
 ![Example](https://i.imgur.com/Gs7KqPG.gif)
 
-
 ## Features
 
 You can use the following shortcuts to adjust the font size:
@@ -62,3 +61,7 @@ Visual Studio Code 1.6 or higher
 ### 1.0.0
 
 Initial release
+
+## Acknowledgements
+
+Thank you to Peter Juras for creating the original fontsize-shortcuts extension.
