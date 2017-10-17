@@ -1,10 +1,11 @@
-# FontSize Shortcuts
+# FontSize Shortcuts (New & Updated)
 
 ## Introduction
 
 Change the font size with keyboard shortcuts.
 
 ![Example](https://i.imgur.com/Gs7KqPG.gif)
+
 
 ## Features
 

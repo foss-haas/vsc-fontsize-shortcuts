@@ -1,15 +1,15 @@
 {
   "name": "fontsize-shortcuts",
-  "displayName": "FontSize Shortcuts",
+  "displayName": "FontSize Shortcuts ",
   "description": "Change the font size with keyboard shortcuts",
   "version": "1.4.0",
-  "publisher": "peterjuras",
+  "publisher": "fosshaas",
   "bugs": {
-    "url": "https://github.com/peterjuras/vsc-fontsize-shortcuts/issues"
+    "url": "https://github.com/foss-haas/vsc-fontsize-shortcuts/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/peterjuras/vsc-fontsize-shortcuts.git"
+    "url": "https://github.com/foss-haas/vsc-fontsize-shortcuts.git"
   },
   "engines": {
     "vscode": "^1.6.0"
