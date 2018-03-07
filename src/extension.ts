@@ -17,10 +17,15 @@ export function activate(context: ExtensionContext) {
     const fontSizeType = terminal
       ? "terminal.integrated.fontSize"
       : "editor.fontSize";
+    const lineHeightProperty = "editor.lineHeight";
+    const lineHeight = config.get<number>(lineHeightProperty);
     const fontSize = config.get<number>(fontSizeType);
+    const relativeLineHeight = lineHeight / fontSize
     const step = config.get<number>("fontshortcuts.step");
     const newSize = Math.min(maxFontSize, Math.round(fontSize + step));
+    const newLineHeight = Math.min(maxFontSize, Math.round(newSize * relativeLineHeight));
     if (newSize === fontSize) return;
+    if (! terminal) config.update(lineHeightProperty, newLineHeight, true);
     return config.update(fontSizeType, newSize, true);
   }
 
@@ -29,10 +34,15 @@ export function activate(context: ExtensionContext) {
     const fontSizeType = terminal
       ? "terminal.integrated.fontSize"
       : "editor.fontSize";
+    const lineHeightProperty = "editor.lineHeight";
+    const lineHeight = config.get<number>(lineHeightProperty);
     const fontSize = config.get<number>(fontSizeType);
+    const relativeLineHeight = lineHeight / fontSize
     const step = config.get<number>("fontshortcuts.step");
     const newSize = Math.max(minFontSize, Math.round(fontSize - step));
+    const newLineHeight = Math.min(maxFontSize, Math.round(newSize * relativeLineHeight));
     if (newSize === fontSize) return;
+    if (! terminal) config.update(lineHeightProperty, newLineHeight, true);
     return config.update(fontSizeType, newSize, true);
   }
 
@@ -44,10 +54,18 @@ export function activate(context: ExtensionContext) {
     const defaultFontSizeType = terminal
       ? "fontshortcuts.defaultFontSize"
       : "fontshortcuts.defaultTerminalFontSize";
+    const lineHeightProperty = "editor.lineHeight";
+    const lineHeight = config.get<number>(lineHeightProperty);
     const defaultFontSize = config.get<number>(defaultFontSizeType);
-
+    const fontSize = config.get<number>(fontSizeType);
+    const relativeLineHeight = lineHeight / fontSize
+    const defaultLineHeight = Math.min(
+      maxFontSize,
+      Math.round(defaultFontSize * relativeLineHeight)
+    );
     if (defaultFontSize === null) {
       try {
+        if (! terminal) await config.update(lineHeightProperty, undefined, true);
         return await config.update(fontSizeType, undefined, true);
       } catch (e) {
         // swallow errors
@@ -60,6 +78,7 @@ export function activate(context: ExtensionContext) {
       defaultFontSize >= minFontSize &&
       defaultFontSize <= maxFontSize
     ) {
+      if (! terminal) config.update(lineHeightProperty, defaultLineHeight, true);
       return config.update(fontSizeType, defaultFontSize, true);
     }
 
