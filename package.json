@@ -2,7 +2,7 @@
   "name": "fontsize-shortcuts",
   "displayName": "FontSize Shortcuts ",
   "description": "Change the font size with keyboard shortcuts",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "publisher": "fosshaas",
   "bugs": {
     "url": "https://github.com/foss-haas/vsc-fontsize-shortcuts/issues"
@@ -14,10 +14,17 @@
   "engines": {
     "vscode": "^1.6.0"
   },
-  "categories": ["Other"],
-  "homepage":
-    "https://github.com/peterjuras/vsc-fontsize-shortcuts/blob/master/README.md",
-  "keywords": ["Font", "Fontsize", "Size", "Keyboard", "Shortcut"],
+  "categories": [
+    "Other"
+  ],
+  "homepage": "https://github.com/peterjuras/vsc-fontsize-shortcuts/blob/master/README.md",
+  "keywords": [
+    "Font",
+    "Fontsize",
+    "Size",
+    "Keyboard",
+    "Shortcut"
+  ],
   "icon": "assets/logo.png",
   "galleryBanner": {
     "color": "#2980b9",
@@ -79,21 +86,24 @@
       "title": "FontSize Shortcuts Configuration",
       "properties": {
         "fontshortcuts.defaultFontSize": {
-          "type": ["number", "null"],
-          "description":
-            "The default editor font size that is used on a font size reset",
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The default editor font size that is used on a font size reset",
           "default": null
         },
         "fontshortcuts.defaultTerminalFontSize": {
-          "type": ["number", "null"],
-          "description":
-            "The default terminal font size that is used on a font size reset",
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The default terminal font size that is used on a font size reset",
           "default": null
         },
         "fontshortcuts.step": {
           "type": "number",
-          "description":
-            "The increment or decrement step for a font size change",
+          "description": "The increment or decrement step for a font size change",
           "default": 1
         }
       }

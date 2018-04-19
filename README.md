@@ -38,7 +38,7 @@ Visual Studio Code 1.6 or higher
 
 ## Release Notes
 
-#### Unreleased
+#### 1.5.0
 
 * Adjust editor.lineheight with font size changes ([@fanckush](https://github.com/fanckush) via [#1](https://github.com/foss-haas/vsc-fontsize-shortcuts/pull/1))
 
