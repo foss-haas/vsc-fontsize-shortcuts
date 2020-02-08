@@ -1,4 +1,4 @@
-# FontSize Shortcuts (New & Updated)
+# FontSize Shortcuts
 
 ## Introduction
 
